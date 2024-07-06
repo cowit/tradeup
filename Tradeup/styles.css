@@ -1,0 +1,273 @@
+:root {
+    --red-border: rgb(172, 1, 10) solid 6px;
+    --light-blue: rgba(22, 156, 251, 0.881);
+    font-weight: bold;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-image: url(./backgroundNoise.png);
+}
+
+.left-tapestry {
+    position: absolute;
+    left: -15px;
+    top: -10px;
+    height: 1200px;
+    width: 146px;
+    padding-bottom: -3px;
+    background-image: url(tape1.png);
+    opacity: 70%;
+    border-bottom: rgb(54, 50, 21) 10px solid;
+}
+
+.lower-tapestry {
+    top: 1191px;
+}
+
+.question-box {
+    display: flex;
+}
+
+.character-questions {
+    border: var(--red-border);
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 700px;
+}
+
+.character-portrait {
+    height: 170px;
+}
+
+.character-name {
+    position: absolute;
+    top: 3px;
+    margin: 0;
+    left: 130px;
+    font-size: x-large;
+}
+
+.character-name::first-letter {
+    font-size: 35px;
+    color: rgba(244, 65, 65, 0.831);
+}
+
+.character-text {
+    position: absolute;
+    top: 35px;
+    margin: 0;
+    left: 130px;
+    font-size: large;
+}
+
+.character-text::first-letter {
+    font-size: 25px;
+    color: var(--light-blue);
+}
+
+.items {
+    display: flex;
+    border: var(--red-border);
+    margin-top: 10px;
+    min-height: 62px;
+    border-bottom: 0;
+}
+
+.item-icon {
+    width: 50px;
+    margin: 3px;
+    padding: 3px;
+    background-color: rgba(128, 128, 128, 0.219);
+    cursor: pointer;
+}
+
+.item-icon[focused=true] {
+    border: gray solid 3px;
+    padding: 0px;
+}
+
+.price-icon {
+    position: absolute;
+    width: 50px;
+    margin: 3px;
+    padding: 3px;
+    right: -7px;
+    top: 7px;
+}
+
+.input-box {
+    opacity: 40%;
+}
+
+.traded .item-icon:not(.trade-icon) {
+    opacity: 100%;
+    background-color: rgb(190, 234, 126);
+}
+
+#player-stats {
+    display: flex;
+    border: var(--red-border);
+    justify-content: space-around;
+    border-top: 0;
+    border-bottom: 0;
+
+}
+
+#the-merchant {
+    border: var(--red-border);
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    max-width: 700px;
+    position: relative;
+    height: 170px;
+}
+
+#merchant-text {
+    text-align: center;
+    text-wrap: wrap;
+    width: 450px;
+    margin-left: 12.5px;
+    font-size: 20px;
+}
+
+#merchant-name {
+    font-size: 30px;
+    text-align: center;
+    width: 450px;
+    margin: 12.5px 10px 0 0;
+}
+
+#merchant-name::first-letter {
+    color: rgba(244, 65, 65, 0.831);
+    font-size: 35px;
+}
+
+#merchant-text::first-letter {
+    color: var(--light-blue);
+    font-size: 30px;
+}
+
+#merchant-portrait {
+    width: 125px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#sell-text {
+    width: 450px;
+    margin: 12.5px 10px 0 0;
+    text-align: center;
+}
+
+#item-description {
+    font-size: large;
+    text-align: center;
+    margin-top: 0;
+    width: 450px;
+    margin: 12.5px 10px 0 0;
+}
+
+.trade-boxes {
+    position: absolute;
+    top: 90px;
+    margin: 0;
+    left: 130px;
+    display: flex;
+}
+
+.trade-box {
+    border: var(--light-blue) solid 6px;
+    display: flex;
+    width: fit-content;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.trade-icon {
+    width: 45px;
+    margin-bottom: 2.5px;
+    margin-right: -10px;
+    background: 0;
+}
+
+.can-be-filled {
+    background-color: yellow;
+}
+
+#tutorial-wrapper {
+    position: absolute;
+    right: 0;
+    top: 200px;
+    overflow-x: hidden;
+    pointer-events: none;
+}
+
+#tutorial {
+    pointer-events: all;
+    position: relative;
+    width: 300px;
+    font-size: 20px;
+    border: var(--red-border);
+    padding: 25px;
+    margin-left: 100px;
+    animation-name: open-tutorial;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    background-image: url(backgroundNoise.png);
+}
+
+#tutorial>p::first-letter {
+    color: var(--light-blue);
+    font-size: 25px;
+}
+
+#tutorial-tab {
+    position: absolute;
+    left: -106px;
+    top: 40%;
+    transform: rotate(-90deg);
+    border: var(--red-border);
+    border-bottom: 0;
+    padding: 5px 2px 5px 2px;
+    background-image: url(backgroundNoise.png);
+}
+
+#tutorial.close {
+    animation-name: close-tutorial;
+}
+
+@keyframes close-tutorial {
+    from {right: -350px;}
+    to {right: 10%;}
+}
+
+@keyframes open-tutorial {
+
+    from {right: 10%;}
+    to {right: -350px;}
+}
+
+#player-stats {
+    font-size: 30px;
+    margin: 0;
+    height: 37px;
+}
+
+#player-stats>p {
+    margin: 0;
+    color: rgb(0, 0, 0);
+}
+
+#reset {
+    cursor: pointer;
+}
